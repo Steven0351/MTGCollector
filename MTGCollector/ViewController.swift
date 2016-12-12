@@ -39,7 +39,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.imageView?.image = UIImage(data: card.image as! Data)
             return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let card = cards[indexPath.row]
+        performSegue(withIdentifier: "cardSegue", sender: card)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! CardViewController
+        nextVC.card = sender as? Card
+    }
 }
+
         
 
 

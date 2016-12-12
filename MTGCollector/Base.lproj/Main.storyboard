@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" id="8dH-ty-jRh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mAd-jY-1O7">
                             <connections>
-                                <segue destination="3xQ-jT-IHf" kind="show" id="Qk0-dY-KoT"/>
+                                <segue destination="3xQ-jT-IHf" kind="show" identifier="cardSegue" id="Qk0-dY-KoT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,6 +91,14 @@
                                     <action selector="addTapped:" destination="3xQ-jT-IHf" eventType="touchUpInside" id="PpL-pI-BYQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbm-kv-hCf">
+                                <rect key="frame" x="165" y="344" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="3xQ-jT-IHf" eventType="touchUpInside" id="PkB-ge-FLM"/>
+                                    <action selector="deleteButton:" destination="3xQ-jT-IHf" eventType="touchUpInside" id="QDj-rT-GOS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -100,7 +108,9 @@
                             <constraint firstItem="X7J-ew-OUF" firstAttribute="width" secondItem="StV-rS-hEx" secondAttribute="width" id="6xh-AI-FiZ"/>
                             <constraint firstItem="StV-rS-hEx" firstAttribute="centerX" secondItem="UhX-ma-CV4" secondAttribute="centerX" id="BBv-Jq-fAH"/>
                             <constraint firstItem="iKt-dw-EkK" firstAttribute="centerX" secondItem="UhX-ma-CV4" secondAttribute="centerX" id="RaS-Dk-cls"/>
+                            <constraint firstItem="zbm-kv-hCf" firstAttribute="top" secondItem="sc9-P7-QDl" secondAttribute="bottom" constant="10" id="ZCa-rK-5ED"/>
                             <constraint firstItem="StV-rS-hEx" firstAttribute="top" secondItem="sP9-wE-f1U" secondAttribute="bottom" constant="20" id="hkJ-VH-yv2"/>
+                            <constraint firstItem="zbm-kv-hCf" firstAttribute="centerX" secondItem="UhX-ma-CV4" secondAttribute="centerX" id="mLg-nd-7Xc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vqr-0k-5FC">
@@ -118,7 +128,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="sc9-P7-QDl" id="SXh-4g-fRQ"/>
                         <outlet property="cardImageView" destination="StV-rS-hEx" id="SP2-Mk-UBi"/>
+                        <outlet property="deleteButton" destination="zbm-kv-hCf" id="hj5-sB-ASF"/>
                         <outlet property="titleTextField" destination="X7J-ew-OUF" id="tN8-bV-dKh"/>
                     </connections>
                 </viewController>
